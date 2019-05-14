@@ -7,6 +7,7 @@ assignees: ''
 
 ---
 
+
 **Is your bug fatal to the program**
 A clear and concise description of what the bug is. Ex. I'm always frustrated when [...]
 
