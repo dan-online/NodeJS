@@ -1,17 +1,8 @@
 const mongoose = require("mongoose");
 const config = require("../../../package");
-
+var Db = require('../models/document');
 mongoose.connect("mongodb://localhost:1212/" + config.name, {useNewUrlParser: true})
     .catch((err) => console.error(err.name +  " error: " + err + "\n\nTry running npm run mongo"));
-
-const schema = new mongoose.Schema({
-    key: mongoose.Schema.Types.Mixed,
-    value: mongoose.Schema.Types.Mixed
-}, {
-    strict:false
-});
-
-var Db = mongoose.model("database", schema);
 
 const functions = {
     getAll(cb) {
