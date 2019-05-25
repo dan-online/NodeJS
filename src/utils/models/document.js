@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
     key: mongoose.Schema.Types.Mixed,
