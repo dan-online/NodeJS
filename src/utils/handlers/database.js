@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const config = require("../../../package");
-var Db = require('../models/document');
+var Db = require("../models/document");
 mongoose.connect("mongodb://localhost:1212/" + config.name, {useNewUrlParser: true})
   .catch((err) => console.error(err.name +  " error: " + err + "\n\nTry running npm run mongo"));
 
