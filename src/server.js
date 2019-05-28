@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
+const log = require('./tests/logger');
 
 const database = require("./utils/handlers/database");
 
@@ -13,6 +14,7 @@ const indexRouter = require("./routes/index");
 const restApi = require("./routes/api/v1/index");
 
 const app = express();
+log('server');
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -23,6 +25,7 @@ const cooky = {
   expires: new Date() * 60 * 60 * 24 * 7,
   saveUninitialized: true
 };
+
 app.set("trust proxy", 1);
 app.use(helmet());
 app.use(session(cooky));
@@ -49,4 +52,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+log('routes');
+
+
 module.exports = app;

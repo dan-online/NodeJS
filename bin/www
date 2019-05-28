@@ -5,7 +5,10 @@ const app = require('../src/server');
 const http = require('http');
 const config = require('../package.json');
 // Msg
-process.stdout.write(config.name + '-v' + config.version + ': Starting...');
+const log = require('../src/tests/logger');
+
+//process.stdout.write(config.name + '-v' + config.version + ': Starting...\n');
+log('initialize');
 // Port init
 const port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
@@ -56,7 +59,8 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  process.stdout.clearLine(); process.stdout.cursorTo(0); process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
+  log('listening');
+  //process.stdout.clearLine(); process.stdout.cursorTo(0); process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
 }
 
 //Error catching

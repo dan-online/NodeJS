@@ -6,6 +6,7 @@
   "main": "./bin/www",
   "author": "MayorChano <dan@dancodes.online>",
   "repository": "https://github.com/MayorChano/NodeJS",
+  "log": "tech",
   "keywords": [
     ""
   ],
@@ -18,6 +19,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
     "cookie-parser": "^1.4.4",
     "edit-json-file": "^1.2.1",
     "ejs": "^2.6.1",

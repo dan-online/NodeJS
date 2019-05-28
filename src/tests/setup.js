@@ -32,10 +32,18 @@ var questions = [
     name: "repo",
     message: "Git Repo (Optional): ",
 },
+{
+    type: 'list',
+    name: 'log',
+    message: 'Console Startup Log:',
+    choices: ["Clean", "Tech"],
+    filter: function(val) {
+      return val.toLowerCase();
+    }
+},
 ];
   console.log("\nThese answers will be written to package.json for publishing! Enjoy -DanCodes\n");
   inquirer.prompt(questions).then((answers) => {
-     
     var file = editJsonFile(`${__dirname.split("/src")[0]}/package.json`);
     file.set("name", answers["name"].toLowerCase());
     file.set("version", answers["version"]);
@@ -44,5 +52,6 @@ var questions = [
     if(answers["repo"]) {
         file.set("repository", answers["repo"]);
     }
+    file.set("log", answers['log']);
     file.save();
   });
