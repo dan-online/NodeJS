@@ -21,14 +21,14 @@ function log(change) {
             logged.find((x) => x.name.toLowerCase() === change).value = true;
         }
         //logged.forEach(l => process.stdout.clearLine());
-        logged.forEach(l => {
-        process.stdout.moveCursor(0, -1);
-        process.stdout.clearLine();
-        if(l.value) {
-            process.stdout.clearLine(); process.stdout.write(chalk.black.bgGreen.bold(" " + word + " ") + " " + l.name + "\n");
-        } else {
-            process.stdout.clearLine(); process.stdout.write(chalk.black.bgRed.bold(" Starting ") + " " + l.name + "\n");
-        }
+        logged.forEach((l) => {
+            process.stdout.moveCursor(0, -1);
+            process.stdout.clearLine();
+            if(l.value) {
+                process.stdout.clearLine(); process.stdout.write(chalk.black.bgGreen.bold(" " + word + " ") + " " + l.name + "\n");
+            } else {
+                process.stdout.clearLine(); process.stdout.write(chalk.black.bgRed.bold(" Starting ") + " " + l.name + "\n");
+            }
         });
         if(logged.filter((x) => !x.value).length === 0) {
             if(test) {
