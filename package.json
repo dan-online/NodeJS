@@ -8,7 +8,22 @@
   "repository": "https://github.com/MayorChano/NodeJS",
   "log": "tech",
   "keywords": [
-    ""
+    "template",
+    "express",
+    "mongodb",
+    "mongoose",
+    "ejs",
+    "setup",
+    "quick",
+    "tests",
+    "easy",
+    "logging",
+    "node",
+    "javascript",
+    "js",
+    "npm",
+    "npm-scripts",
+    "npmjs"
   ],
   "scripts": {
     "start": "node ./bin/www",
