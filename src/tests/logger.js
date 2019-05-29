@@ -24,6 +24,8 @@ function log(change) {
         logged.forEach((l) => {
             process.stdout.moveCursor(0, -1);
             process.stdout.clearLine();
+        });
+        logged.forEach((l) => {
             if(l.value) {
                 process.stdout.clearLine(); process.stdout.write(chalk.black.bgGreen.bold(" " + word + " ") + " " + l.name + "\n");
             } else {
