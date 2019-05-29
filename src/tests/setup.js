@@ -33,9 +33,9 @@ var questions = [
     message: "Git Repo (Optional): ",
 },
 {
-    type: 'list',
-    name: 'log',
-    message: 'Console Startup Log:',
+    type: "list",
+    name: "log",
+    message: "Console Startup Log:",
     choices: ["Clean", "Tech"],
     filter: function(val) {
       return val.toLowerCase();
@@ -52,6 +52,6 @@ var questions = [
     if(answers["repo"]) {
         file.set("repository", answers["repo"]);
     }
-    file.set("log", answers['log']);
+    file.set("log", answers["log"]);
     file.save();
   });

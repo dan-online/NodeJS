@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
-const log = require('./tests/logger');
+const log = require("./tests/logger");
 
 const database = require("./utils/handlers/database");
 
@@ -14,7 +14,7 @@ const indexRouter = require("./routes/index");
 const restApi = require("./routes/api/v1/index");
 
 const app = express();
-log('server');
+log("server");
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-log('routes');
+log("routes");
 
 
 module.exports = app;
