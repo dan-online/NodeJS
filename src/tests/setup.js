@@ -37,9 +37,6 @@ var questions = [
     name: "log",
     message: "Console Startup Log:",
     choices: ["Clean", "Tech"],
-    filter: function(val) {
-      return val.toLowerCase();
-    }
 },
 ];
   console.log("\nThese answers will be written to package.json for publishing! Enjoy -DanCodes\n");
@@ -52,6 +49,6 @@ var questions = [
     if(answers["repo"]) {
         file.set("repository", answers["repo"]);
     }
-    file.set("log", answers["log"]);
+    file.set("log", answers["log"].toLowerCase());
     file.save();
   });
