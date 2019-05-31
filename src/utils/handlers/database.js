@@ -3,7 +3,10 @@ const config = require("../../../package");
 
 const log = require("../../tests/logger");
 mongoose.connect("mongodb://localhost:27017/" + config.name, {useNewUrlParser: true})
-    .catch((err) => {err.adv = "\n\nTry running npm run mongo\n"; log("database", err)})
+    .catch((err) => {
+        err.adv = "\n\nTry running npm run mongo\n"; 
+        log("database", err);
+    })
     .then((O_o) => {
         if(mongoose.connection.readyState === 1) {
             log("database");

@@ -12,11 +12,20 @@ var test = false;
 var okOn = "Online";
 var errOff = "Starting";
 
-log("start");
+if(process.argv.find(x => x == "test")) {
+    logged.push({name: "Syntax", value: false});
+    require('child_process').exec(`find . -path ./node_modules -prune -o -name "*.js" -exec node -c {} \;`, function(err, out) {
+        if(err) {
+            log("syntax", err);
+        } else {
+            log("syntax");
+        }
+    })
+}
 
 function log(change, err) {
     if(err) {
-        errOff = "Error"
+        errOff = "Error";
     }
     if(change === "test") {
         test = true;
@@ -47,7 +56,7 @@ function log(change, err) {
         }
         if(logged.filter((x) => !x.value).length === 0) {
             if(test) {
-                process.stdout.write(chalk.bold.green("\nAll checks finished.\n\n"))
+                process.stdout.write(chalk.bold.green("\nAll checks finished.\n\n"));
                 return process.exit(0);
             }
             process.stdout.write(`\n${config.name}-${config.version} listening on port ${config.port}\n`);
@@ -56,4 +65,9 @@ function log(change, err) {
         process.stdout.write(`\n${config.name}-${config.version} listening on port ${config.port}\n`);
     }
 }
+
+
+log("start");
+
+
 module.exports = log;
