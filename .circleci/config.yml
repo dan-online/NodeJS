@@ -23,5 +23,7 @@ jobs:
       - run: # run tests
           name: test
           command: npm test
+          environment:
+            PORT: 1212
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test-results.xml
