@@ -5,8 +5,6 @@ jobs:
     docker: 
       - image: circleci/node:latest
       - image: mongodb:latest
-    services:
-      - mongodb
     steps: 
       - checkout
       - run:
