@@ -32,7 +32,7 @@ function log(change, err) {
             process.stdout.clearLine();
         });
         logged.forEach((l) => {
-            if(l.value == true) {
+            if(l.value === true) {
                 process.stdout.clearLine(); process.stdout.write(chalk.black.bgGreen.bold(" " + okOn + " ") + " " + l.name + "\n");
             } else {
                 process.stdout.clearLine(); process.stdout.write(chalk.black.bgRed.bold(" " + errOff + " ") + " " + l.name + "\n");
@@ -50,7 +50,7 @@ function log(change, err) {
                 errors.push(err);
             }
         }
-        if(logged.filter((x) => x.value == false).length === 0) {
+        if(logged.filter((x) => x.value === false).length === 0) {
             if(errors.length > 0) {
                 errors.forEach((e) => console.error("\nError: "  + e + " " + e.adv));
                 return process.exit(1);
@@ -68,7 +68,7 @@ function log(change, err) {
 
 if(test) {
     logged.push({name: "Syntax", value: false});
-    require("child_process").exec(`find .  -path ./node_modules -prune -o -path ./.history -prune -o -path ./data -prune -o -name "*.js" -exec node -c {} \\;`, function(err, out) {
+    require("child_process").exec("find .  -path ./node_modules -prune -o -path ./.history -prune -o -path ./data -prune -o -name \"*.js\" -exec node -c {} \\;", function(err, out) {
         if(err) {
             log("syntax", err);
         } else {
