@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build: 
-    working_directory: ~/git-chat
+    working_directory: ~/nodejs
     docker: 
       - image: circleci/node:latest
       - image: mongodb:latest
