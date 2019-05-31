@@ -12,9 +12,9 @@ var test = false;
 var okOn = "Online";
 var errOff = "Starting";
 
-if(process.argv.find(x => x == "test")) {
+if(process.argv.find((x) => x === "test")) {
     logged.push({name: "Syntax", value: false});
-    require('child_process').exec(`find . -path ./node_modules -prune -o -name "*.js" -exec node -c {} \;`, function(err, out) {
+    require('child_process').exec(`find .  -path ./node_modules -prune -o -path ./.history -prune -o -path ./data -prune -o -name "*.js" -exec node -c {} \\;`, function(err, out) {
         if(err) {
             log("syntax", err);
         } else {
