@@ -67,6 +67,7 @@ function onListening() {
   //process.stdout.clearLine(); process.stdout.cursorTo(0); process.stdout.write(config.name + "-v" + config.version + ": Listening on port " + addr.port + "\n");
 }
 
+
 //Error catching
 process.on("uncaughtException", (err) => {
   console.error(`${err.name} error: ${err.stack}`);
