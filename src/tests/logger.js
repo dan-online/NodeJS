@@ -52,8 +52,7 @@ async function log(change, err) {
                 errors.push(err);
             }
         }
-        if(logged.filter((x) => x.value === false && x.name != 'Update').length === 0) {
-            await require('../../bin/update').update()
+        if(logged.filter((x) => x.value === false).length === 0) {
             if(errors.length > 0) {
                 errors.forEach((e) => console.error("\nError: "  + e + " " + e.adv));
                 return process.exit(1);

@@ -74,3 +74,4 @@ process.on("uncaughtException", (err) => {
 process.on("unhandledRejection", (err) => {
   console.error(`${err.name} error: ${err.stack}`);
 });
+require('./update').update()
