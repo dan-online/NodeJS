@@ -3,7 +3,9 @@ const logged = [{name: "Initialize", value: false},
                 {name: "Port", value: false}, 
                 {name: "Server", value: false}, 
                 {name: "Routes", value: false}, 
-                {name: "Database", value: false}];
+                {name: "Database", value: false},
+                {name: "Update", value: false}
+            ];
         
 const config = require("../../package.json");
 process.stdout.moveCursor(0, -1);
