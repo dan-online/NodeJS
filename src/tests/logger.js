@@ -3,7 +3,8 @@ const logged = [{name: "Initialize", value: false},
                 {name: "Port", value: false}, 
                 {name: "Server", value: false}, 
                 {name: "Routes", value: false}, 
-                {name: "Database", value: false}
+                {name: "Database", value: false},
+                {name: "Update", value: false}
             ];
         
 const config = require("../../package.json");
@@ -51,7 +52,7 @@ async function log(change, err) {
                 errors.push(err);
             }
         }
-        if(logged.filter((x) => x.value === false).length === 0) {
+        if(logged.filter((x) => x.value === false && x.name != 'Update').length === 0) {
             await require('../../bin/update').update()
             if(errors.length > 0) {
                 errors.forEach((e) => console.error("\nError: "  + e + " " + e.adv));

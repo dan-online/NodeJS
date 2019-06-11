@@ -1,6 +1,7 @@
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const inquirer = require("inquirer");
+const log = require("../src/tests/logger");
 
 async function run(code) {
 	var r = await exec(code).catch(err => {if(err) var r = {type: 'error', stderr:err}}
@@ -35,5 +36,6 @@ module.exports.update = async function () {
 
     await file('./bin/www');
     await file('./bin/update.js');
+    log("update")
     //await run('git checkout origin/master ' + __dirname + '/bin/www')
 }
