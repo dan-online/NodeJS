@@ -7,6 +7,7 @@
   "author": "MayorChano <dan@dancodes.online>",
   "repository": "https://github.com/MayorChano/NodeJS",
   "log": "tech",
+  "update": "yes",
   "keywords": [
     "template",
     "express",

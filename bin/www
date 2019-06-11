@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-console.log("\033c")
+console.clear();
 // Modules
 const app = require("../src/server");
 const http = require("http");
@@ -74,4 +74,6 @@ process.on("uncaughtException", (err) => {
 process.on("unhandledRejection", (err) => {
   console.error(`${err.name} error: ${err.stack}`);
 });
-require('./update').update()
+if(config.update) {
+  require('./update').update()
+}

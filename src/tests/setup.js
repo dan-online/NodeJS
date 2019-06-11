@@ -38,6 +38,12 @@ var questions = [
     message: "Console Startup Log:",
     choices: ["Clean", "Tech"],
 },
+{
+    type: "list",
+    name: "update",
+    message: "Automatic Update:",
+    choices: ["Yes", "No"],
+},
 ];
   console.log("\nThese answers will be written to package.json for publishing! Enjoy -DanCodes\n");
   inquirer.prompt(questions).then((answers) => {
@@ -49,6 +55,7 @@ var questions = [
     if(answers["repo"]) {
         file.set("repository", answers["repo"]);
     }
+    file.set("update", answers["update"].toLowerCase());
     file.set("log", answers["log"].toLowerCase());
     file.save();
   });

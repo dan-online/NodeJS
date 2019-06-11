@@ -16,10 +16,10 @@ async function run(code) {
 }
 
 module.exports.update = async function () {
-    await run('git fetch');
-    await run('git remote add dev https://github.com/MayorChano/NodeJS');
+    await run('git fetch github');
+    await run('git remote add github https://github.com/MayorChano/NodeJS');
     async function file(file) {
-        let check = await run('git diff dev/master ' + file)
+        let check = await run('git diff github/master --name-only ' + file)
         if(check.output || check.type == 'error') {
             var questions = [{
                     type: "list",
@@ -29,7 +29,7 @@ module.exports.update = async function () {
                 }];
             const answers = await inquirer.prompt(questions)
             if(answers['update'] == 'Yes') {
-                await run('git checkout dev/master ' + file);
+                await run('git checkout github/master ' + file);
             }
         }
     }
