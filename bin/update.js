@@ -8,7 +8,6 @@ async function run(code) {
 );
 	if(!r) r = {stderr: r}
 	if (r.stderr) {
-		console.log('Error when running ' + code);
     	return {type: 'error', output: r.stderr};
   	} else {
   		return {type: 'success', output: r.stdout};
