@@ -16,13 +16,16 @@ var errors = [];
 var test = false; 
 var okOn = "Online";
 var errOff = "Starting";
-
+var date;
 if(process.argv.find((x) => x === "test")) {
     test = true;
     okOn = "OK";
 }
 
 async function log(change, err) {
+    if(!date) {
+        date = new Date();
+    }
     if(err) {
         errOff = "Error";
     }
@@ -61,7 +64,7 @@ async function log(change, err) {
             return process.exit(1);
         }
         if(test) {
-            process.stdout.write(chalk.bold.green("\nAll checks finished.\n\n"));
+            process.stdout.write(chalk.bold.green("\nAll checks finished in " + Math.round((new Date() - date) / 1000) + " seconds.\n\n"));
             return process.exit(0);
         }
         process.stdout.write(`\n${config.name}-${config.version} listening on port ${config.port}\n`);
