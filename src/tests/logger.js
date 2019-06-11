@@ -3,8 +3,7 @@ const logged = [{name: "Initialize", value: false},
                 {name: "Port", value: false}, 
                 {name: "Server", value: false}, 
                 {name: "Routes", value: false}, 
-                {name: "Database", value: false},
-                {name: "Update", value: false}
+                {name: "Database", value: false}
             ];
         
 const config = require("../../package.json");
@@ -20,7 +19,7 @@ if(process.argv.find((x) => x === "test")) {
     okOn = "OK";
 }
 
-function log(change, err) {
+async function log(change, err) {
     if(err) {
         errOff = "Error";
     }
@@ -53,6 +52,7 @@ function log(change, err) {
             }
         }
         if(logged.filter((x) => x.value === false).length === 0) {
+            await require('../../bin/update').update()
             if(errors.length > 0) {
                 errors.forEach((e) => console.error("\nError: "  + e + " " + e.adv));
                 return process.exit(1);
