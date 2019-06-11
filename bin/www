@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 console.log("\033c")
 // Modules
+
 const app = require("../src/server");
 const http = require("http");
 const config = require("../package.json");
