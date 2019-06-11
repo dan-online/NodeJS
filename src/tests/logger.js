@@ -64,7 +64,7 @@ async function log(change, err) {
             return process.exit(1);
         }
         if(test) {
-            process.stdout.write(chalk.bold.green("\nAll checks finished in " + Math.round((new Date() - date) / 1000) + " seconds.\n\n"));
+            process.stdout.write(chalk.bold.green("\nAll checks finished in " + (Math.round(((new Date() - date) / 1000) * 100) /100) + " seconds.\n\n"));
             return process.exit(0);
         }
         process.stdout.write(`\n${config.name}-${config.version} listening on port ${config.port}\n`);

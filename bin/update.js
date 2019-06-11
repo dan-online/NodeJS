@@ -39,6 +39,8 @@ module.exports.update = async function () {
     }
 
     await file("./bin/www");
+    await file("./src/tests/setup.js");
+    await file("./src/tests/logger.js");
     await file("./bin/update.js");
     log("update");
     //await run("git checkout origin/master " + __dirname + "/bin/www")
