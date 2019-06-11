@@ -7,7 +7,7 @@ const logged = [{name: "Initialize", value: false},
             ];
         
 const config = require("../../package.json");
-if(config.update == "yes") {
+if(config.update.toLowerCase() === "yes") {
     logged.push({name: "Update", value: false});
 }
 process.stdout.moveCursor(0, -1);

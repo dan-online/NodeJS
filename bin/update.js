@@ -23,7 +23,7 @@ module.exports.update = async function () {
     await run("git fetch github");
     await run("git remote add github https://github.com/MayorChano/NodeJS");
     async function file(file) {
-        let check = await run("git diff github/master --name-only " + file)
+        let check = await run("git diff github/master --name-only " + file);
         if(check.output || check.type === "error") {
             var questions = [{
                     type: "list",
