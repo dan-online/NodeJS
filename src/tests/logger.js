@@ -22,7 +22,7 @@ if(process.argv.find((x) => x === "test")) {
     okOn = "OK";
 }
 
-async function log(change, err) {
+function log(change, err) {
     if(!date) {
         date = new Date();
     }
@@ -52,7 +52,7 @@ async function log(change, err) {
         }
         if(test !== true) {
             console.error("\nError: "  + err + " " + err.adv);
-            return process.exit(1);
+            return process.exit(0);
         } else {
             logged.find((x) => x.name.toLowerCase() === change.toLowerCase()).value = "err";
             errors.push(err);
