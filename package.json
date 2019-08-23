@@ -46,7 +46,7 @@
     "file-system": "^2.2.2",
     "helmet": "^3.18.0",
     "http-errors": "^1.7.2",
-    "inquirer": "^6.3.1",
+    "inquirer": "^7.0.0",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
     "morgan": "^1.9.1",
