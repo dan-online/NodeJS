@@ -37,7 +37,7 @@
   "dependencies": {
     "auto-updater": "^1.0.2",
     "body-parser": "^1.19.0",
-    "chalk": "^2.4.2",
+    "chalk": "^4.1.0",
     "cookie-parser": "^1.4.4",
     "edit-json-file": "^1.2.1",
     "ejs": "^2.6.1",
