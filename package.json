@@ -44,7 +44,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.1",
     "file-system": "^2.2.2",
-    "helmet": "^3.18.0",
+    "helmet": "^4.1.1",
     "http-errors": "^1.7.2",
     "inquirer": "^7.0.3",
     "mongodb": "^3.2.6",
